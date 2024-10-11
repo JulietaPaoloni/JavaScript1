@@ -6,3 +6,18 @@
   gap: 2vh;
 
 }
+h2{
+  color: rgb(182, 100, 100);
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.button{
+  border: 1px;
+  padding: 2px;
+  margin-top: 2px;
+}
+
+input{
+  margin: 3px;
+}

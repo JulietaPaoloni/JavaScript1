@@ -245,4 +245,34 @@ desButton.addEventListener("click", ()=>{
 habButton.addEventListener("click",()=>{
   habilitButton();
 })
+//SECCION 9 LOCAL STORAGE
+//Ejercicio 1
+const buttonElim=document.getElementById("buttonElim");
+const buttonGuard=document.getElementById("buttonGuard");
+const mail=document.getElementById("mail");
 
+buttonGuard.addEventListener("click",()=>{
+  guardarMail();
+  const result = localStorage.getItem("datosMail")
+  if(result){
+    const correoGuardado = document.getElementById("CorreoGuardado");
+    const parsedResult = JSON.parse(result);
+    correoGuardado.innerHTML=`<p>Correo guardado: ${parsedResult.mail}</p>`;
+  }else{
+    console.log("Los datos no existen.")
+  }
+});
+
+buttonElim.addEventListener("click",()=>{
+  eliminarMail();
+});
+
+const eliminarMail=()=>{       
+  const mail=document.getElementById("mail").value;
+  localStorage.removeItem("datosMail", JSON.stringify({mail}));
+}
+
+const guardarMail=()=>{       
+  const mail=document.getElementById("mail").value;
+  localStorage.setItem("datosMail", JSON.stringify({mail}));
+}
